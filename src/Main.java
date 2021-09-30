@@ -1,12 +1,9 @@
 public class Main {
     public static void main(String[] args) {
 
-
         PathProblemService pathProblemService = new PathProblemService();
-
-        String windowsPath = "D:\\SDA\\Java_Fundamentals_Coding_Exercises.pdf";
-
-        String linuxPath = "D:/SDA/Java_Fundamentals_Coding_Exercises.pdf";
+        String windowsPath = "D:\\SDA\\Java_Fundamentals_Coding_Exercises.1.87.pdf";
+        String linuxPath = "D:/SDA/Java_Fundamentals_Coding_Exercises.1.87.pdf";
 
 
         System.out.println("WINDOWS PATH");

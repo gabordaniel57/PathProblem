@@ -1,31 +1,33 @@
 public class PathProblemService {
 
-
     public String getFileName(String path) {
 
-        int extensionIndex = 0;
+        int firstDotIndex = 0;
+        boolean firstDotFinded = false;
         String reversedPath = this.reverseString(path);
 
         if (path.contains("/")) {
             for (int i = 0; i < reversedPath.length(); i++) {
-                if (reversedPath.charAt(i) == '.') {
-                    extensionIndex = i + 1;
+                if (reversedPath.charAt(i) == '.' && !firstDotFinded) {
+                    firstDotIndex = i + 1;
+                    firstDotFinded = true;
                 }
                 if (reversedPath.charAt(i) == '/') {
                     return this
                             .reverseString(reversedPath
-                                    .substring(extensionIndex, i));
+                                    .substring(firstDotIndex, i));
                 }
             }
         } else if (path.contains("\\")) {
             for (int i = 0; i < reversedPath.length(); i++) {
-                if (reversedPath.charAt(i) == '.') {
-                    extensionIndex = i + 1;
+                if (reversedPath.charAt(i) == '.' && !firstDotFinded) {
+                    firstDotIndex = i + 1;
+                    firstDotFinded = true;
                 }
                 if (reversedPath.charAt(i) == '\\') {
                     return this
                             .reverseString(reversedPath
-                                    .substring(extensionIndex, i));
+                                    .substring(firstDotIndex, i));
                 }
             }
         }
