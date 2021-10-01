@@ -11,7 +11,7 @@ public class PathProblemUtils {
         this.path = path;
         this.slash = this.getSlashType();
         this.lastSlashIndex = path.lastIndexOf(slash);
-        this.extensionDotIndex = getExtensionDotIndex();
+        this.extensionDotIndex = path.lastIndexOf(".");
     }
 
     public String getParentFolder() {
@@ -36,9 +36,6 @@ public class PathProblemUtils {
         return path.substring(extensionDotIndex + 1, path.length());
     }
 
-    int getExtensionDotIndex() {
-        return path.lastIndexOf(".");
-    }
 
     char getSlashType() {
         char slash = '\\';
